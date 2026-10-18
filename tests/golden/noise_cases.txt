@@ -1,0 +1,3 @@
+# stem mode seed bytes -- fldigi 4.2.13 bench RX of 20 s noise at 0.1 RMS
+navtex_noise NAVTEX 77 0
+sitorb_noise SITORB 78 0

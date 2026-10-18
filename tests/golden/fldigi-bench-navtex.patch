@@ -1,0 +1,92 @@
+fldigi bench NAVTEX extension for wave-owl fldigi-navtex-core, applied on top of the TX
+extension of fix-psk-rtty-vs-fldigi (fldigi-bench-tx.patch). Env-gated dump hooks only; the
+modem DSP is not touched and without the variables nothing changes. Rebuild with make -j10.
+
+diff --git a/src/navtex/navtex.cxx b/src/navtex/navtex.cxx
+index f424d577..5a61caaa 100644
+--- a/src/navtex/navtex.cxx
++++ b/src/navtex/navtex.cxx
+@@ -213,6 +213,25 @@
+ 
+ pthread_mutex_t  navtex_filter_mutex = PTHREAD_MUTEX_INITIALIZER;
+ 
++#if BENCHMARK_MODE
++// ---- fldigi-bench NAVTEX extension (local patch, not upstream) ----
++// Env-gated dump hooks for wave-owl fldigi-navtex-core goldens; the modem DSP is not touched
++// and without the variables nothing changes:
++//  * FLDIGI_BENCH_NAVTEX_TXDUMP=<file>: every TX block handed to ModulateXmtr (before the TX
++//    level) is appended to <file> as raw native doubles;
++//  * FLDIGI_BENCH_NAVTEX_MSG=<file>: every message display_message() logs is appended as
++//    "<origin> <subject> <number> <size> <hex of the logged text>";
++//  * FLDIGI_BENCH_NAVTEX_BITS=<file>: every logic level handed to handle_bit_value() is
++//    appended as "<sample_count> <logic_level as %a>".
++#include <cstdlib>
++static FILE *bench_navtex_file(const char *var) {
++	const char *p = getenv(var);
++	if (!p) return 0;
++	return fopen(p, "ab");
++}
++#endif
++// ---- end fldigi-bench NAVTEX extension ----
++
+ /// This models a line of the file defining Navtex stations.
+ class NavtexRecord
+ {
+@@ -634,6 +653,9 @@ class ccir_message : public std::string {
+ 	char m_subject ;
+ 	int  m_number ;
+ public:
++	char origin_c() const { return m_origin; }
++	char subject_c() const { return m_subject; }
++	int number_i() const { return m_number; }
+ 	const char * msg_type(void) const
+ 	{
+ 		switch(m_subject) {
+@@ -1190,6 +1212,10 @@ private:
+ 	// into navtex messages
+ 	void handle_bit_value(int logic_level) {
+ 		int buffersize = m_bit_values.size();
++#if BENCHMARK_MODE
++		{ static FILE *f = bench_navtex_file("FLDIGI_BENCH_NAVTEX_BITS");
++		  if (f) fprintf(f, "%d %d\n", m_sample_count, logic_level); }
++#endif
+ 		int i, offset = 0;
+ 
+ 		// Store the received value in the bit stream
+@@ -1683,6 +1709,15 @@ private:
+ 	void display_message( ccir_message & ccir_msg, const std::string & alt_string ) {
+ 		if( ccir_msg.size() >= (size_t)progdefaults.NVTX_MinSizLoggedMsg )
+ 		{
++#if BENCHMARK_MODE
++			{ static FILE *f = bench_navtex_file("FLDIGI_BENCH_NAVTEX_MSG");
++			  if (f) {
++				fprintf(f, "%d %d %d %zu ", (int)(unsigned char)ccir_msg.origin_c(),
++					(int)(unsigned char)ccir_msg.subject_c(), ccir_msg.number_i(), ccir_msg.size());
++				for (size_t k = 0; k < alt_string.size(); k++)
++					fprintf(f, "%02x", (unsigned char)alt_string[k]);
++				fprintf(f, "\n"); fflush(f); } }
++#endif
+ 			try
+ 			{
+ 				ccir_msg.display(alt_string);
+@@ -1762,6 +1797,10 @@ public:
+ 	void tx_flush()
+ 	{
+ 		if( m_tx_counter != 0 ) {
++#if BENCHMARK_MODE
++			{ static FILE *f = bench_navtex_file("FLDIGI_BENCH_NAVTEX_TXDUMP");
++			  if (f) { fwrite(m_tx_buf, sizeof(double), m_tx_counter, f); fflush(f); } }
++#endif
+ 			m_ptr_navtex->ModulateXmtr( m_tx_buf, m_tx_counter );
+ 			m_tx_counter = 0 ;
+ 		}
+--- a/src/misc/benchmark.cxx
++++ b/src/misc/benchmark.cxx
+@@ -84,3 +84,7 @@
+ 	macrochar = txt;                        // char source for get_tx_char()
+ 	xmltest_char_available = true;          // empty xml test buffer -> ETX after text
++	// fldigi-bench NAVTEX: navtex::tx_process reads get_tx_char() until NODATA in one call,
++	// an endless ETX would never end it; without the xml test buffer the text ends in NODATA.
++	if (active_modem->get_mode() == MODE_NAVTEX || active_modem->get_mode() == MODE_SITORB)
++		xmltest_char_available = false;
+ 	active_modem->tx_init();

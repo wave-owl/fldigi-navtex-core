@@ -1,0 +1,12 @@
+# stem mode text index carrier ita2 samples fnv1a64(int16 LE) fnv1a64(doubles before the TX level) -- fldigi 4.2.13 bench TX, txlevel -12 dB
+navtex_cq NAVTEX cq 0 1000 0 212380 efa8d1ab09144adc a01b1a3468dcf765
+navtex_pangram NAVTEX pangram 1 1000 0 273980 63f60b888b63c7c1 f6243758cdd9d081
+navtex_wx NAVTEX wx 2 1000 0 250880 5a0c6b432e878636 7b69922c205e026b
+navtex_lower NAVTEX lower 3 1000 0 207760 3affc12b798c4cd0 cd9f0cd61d51c684
+navtex_cq_1500 NAVTEX cq 4 1500 0 212380 97b304b1e595674b 808773595eece2a8
+navtex_ita2 NAVTEX pangram 5 1000 1 277060 ec66b1fdd787be72 9e6b89ea1afba782
+sitorb_cq SITORB cq 6 1000 0 46200 22d74c9d65aef959 92394e44f6d54064
+sitorb_pangram SITORB pangram 7 1000 0 106260 e85b7064003b7da8 72280eb455e7c94c
+sitorb_lost_header SITORB lost_header 8 1000 0 44660 4b6ed0cad3be8989 598c733e51cba0bb
+sitorb_lost_trailer SITORB lost_trailer 9 1000 0 95480 e75651147bc69d76 1ec56d2584d9d197
+sitorb_timeout SITORB timeout 10 1000 0 55440 d94f1f9d577494ce 5dc0026bb959edd7

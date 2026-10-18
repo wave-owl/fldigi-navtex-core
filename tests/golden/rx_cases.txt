@@ -1,0 +1,15 @@
+# stem sources mode index rx-carrier ita2 tail-seconds snrs -- fldigi 4.2.13 bench RX of 1 s + sources + tail, AFC off; noise seed = 1000 * index + snr step
+navtex_cq navtex_cq NAVTEX 0 1000 0 3 clean,m03,m06,m09,m12
+navtex_pangram navtex_pangram NAVTEX 1 1000 0 3 clean,m03,m06,m09,m12
+navtex_wx navtex_wx NAVTEX 2 1000 0 3 clean,m06,m09
+navtex_cq_1500 navtex_cq_1500 NAVTEX 3 1500 0 3 clean,m06
+navtex_ita2 navtex_ita2 NAVTEX 4 1000 1 3 clean,m06
+navtex_cq_rx1010 navtex_cq NAVTEX 5 1010 0 3 clean,m06
+navtex_cq_rx990 navtex_cq NAVTEX 6 990 0 3 clean,m06
+navtex_two navtex_cq+navtex_pangram NAVTEX 7 1000 0 3 clean,m06
+sitorb_cq sitorb_cq SITORB 8 1000 0 3 clean,m03,m06,m09,m12
+sitorb_pangram sitorb_pangram SITORB 9 1000 0 3 clean,m06
+sitorb_cq_as_navtex sitorb_cq NAVTEX 10 1000 0 3 clean
+lost_header sitorb_lost_header NAVTEX 11 1000 0 3 clean,m06
+lost_trailer sitorb_lost_trailer NAVTEX 12 1000 0 3 clean,m06
+timeout sitorb_timeout NAVTEX 13 1000 0 620 clean
