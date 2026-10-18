@@ -58,6 +58,11 @@ static void test_version(void)
     CHECK(strstr(v, "tx=1") != NULL, "tx tag");
     CHECK(strstr(v, "dsp=" FDSP_VERSION_STRING) != NULL, "dsp tag");
     CHECK(fnavtex_abi() == FNAVTEX_ABI, "abi");
+    CHECK(fnavtex_sizeof(FNAVTEX_SIZEOF_EVENT) == sizeof(fnavtex_event) &&
+          fnavtex_sizeof(FNAVTEX_SIZEOF_MESSAGE) == sizeof(fnavtex_message) &&
+          fnavtex_sizeof(FNAVTEX_SIZEOF_RX_CONFIG) == sizeof(fnavtex_rx_config) &&
+          fnavtex_sizeof(FNAVTEX_SIZEOF_TX_CONFIG) == sizeof(fnavtex_tx_config) &&
+          fnavtex_sizeof(99) == 0, "struct sizes");
 }
 
 static void test_create_refusals(void)

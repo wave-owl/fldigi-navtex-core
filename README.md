@@ -135,6 +135,7 @@ See `include/fldigi_navtex.h` (every function documented there). In short:
 | Function | |
 |---|---|
 | `fnavtex_version()`, `fnavtex_abi()` | `"fldigi-navtex-core 0.1.0 contract=navtex-c1 abi=1 tx=1 dsp=0.7.0"`, `1` |
+| `fnavtex_sizeof(what)` | `sizeof` of the event, message and config structures, so a binding can check its mirrors |
 | `fnavtex_rx_create(cfg)` / `_destroy` / `_reset` | mode NAVTEX or SITOR-B, carrier (200 .. 3000 Hz, 0 = 1000), AFC, ITA2, minimum logged size |
 | `fnavtex_rx_process(rx, x, n, ev, max)` | 11025 Hz samples (int16 / 32768) in, printed characters out; complete 512-sample blocks are processed |
 | `fnavtex_rx_flush` | process the waiting partial block (end of input) |

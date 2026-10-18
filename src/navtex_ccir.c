@@ -25,6 +25,17 @@ int fnavtex_abi(void)
     return FNAVTEX_ABI;
 }
 
+size_t fnavtex_sizeof(int what)
+{
+    switch (what) {
+    case FNAVTEX_SIZEOF_EVENT: return sizeof(fnavtex_event);
+    case FNAVTEX_SIZEOF_MESSAGE: return sizeof(fnavtex_message);
+    case FNAVTEX_SIZEOF_RX_CONFIG: return sizeof(fnavtex_rx_config);
+    case FNAVTEX_SIZEOF_TX_CONFIG: return sizeof(fnavtex_tx_config);
+    default: return 0;
+    }
+}
+
 /* code_to_ltrs, navtex.cxx:465-475 */
 const unsigned char fnavtex_code_to_ltrs[128] = {
     /*0 1    2    3    4    5    6    7    8    9    a    b    c    d    e    f */

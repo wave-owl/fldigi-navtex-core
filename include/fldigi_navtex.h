@@ -37,6 +37,14 @@ extern "C" {
 const char *fnavtex_version(void);
 int fnavtex_abi(void);                      /* FNAVTEX_ABI */
 
+/* sizeof the public structures, so a binding can check its mirrors of them (a ctypes
+ * binding sizes its arrays from these). */
+#define FNAVTEX_SIZEOF_EVENT 0
+#define FNAVTEX_SIZEOF_MESSAGE 1
+#define FNAVTEX_SIZEOF_RX_CONFIG 2
+#define FNAVTEX_SIZEOF_TX_CONFIG 3
+size_t fnavtex_sizeof(int what);            /* 0 for an unknown structure */
+
 /* The two modes of fldigi's navtex modem (navtex.cxx:1940-1957). NAVTEX frames messages as
  * "ZCZC B1B2B3B4" .. "NNNN" with phasing; SITOR-B is the plain collective B-mode stream. */
 #define FNAVTEX_MODE_NAVTEX 0
