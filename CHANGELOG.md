@@ -3,6 +3,12 @@
 All notable changes to fldigi-navtex-core. Versions follow semantic versioning; the contract
 tag `navtex-c1` changes only with an incompatible API change.
 
+## 0.1.1 - 2026-10-18
+
+- `fnavtex_i_process_char` cites fldigi's `process_char` (navtex.cxx:1325-1362) inside the
+  function, as every other ported step does. No functional change.
+- `fnavtex_sizeof` (added before the 0.1.0 tag) is listed in the README.
+
 ## 0.1.0 - 2026-10-18
 
 First release (wave-owl change `add-fldigi-navtex-core`).

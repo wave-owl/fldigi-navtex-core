@@ -28,10 +28,10 @@
 extern "C" {
 #endif
 
-#define FNAVTEX_VERSION_STRING "0.1.0"
+#define FNAVTEX_VERSION_STRING "0.1.1"
 #define FNAVTEX_ABI 1
 
-/* "fldigi-navtex-core 0.1.0 contract=navtex-c1 abi=1 tx=1 dsp=0.7.0". Static string. The
+/* "fldigi-navtex-core 0.1.1 contract=navtex-c1 abi=1 tx=1 dsp=0.7.0". Static string. The
  * contract tag changes only with an incompatible API change; tx=1 announces the
  * transmitter. */
 const char *fnavtex_version(void);

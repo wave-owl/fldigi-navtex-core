@@ -316,6 +316,7 @@ static void filter_print(fnavtex_rx *rx, int c)
 
 void fnavtex_i_process_char(fnavtex_rx *rx, int chr)
 {
+    /* process_char, navtex.cxx:1325-1362 (last_char is per instance here) */
     switch (chr) {
     case NAVTEX_CODE_REP:
         /* two rep characters in alpha phase: fix the rep/alpha phase so FEC works again */
