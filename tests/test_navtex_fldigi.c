@@ -228,7 +228,7 @@ static void check_rx(const char *name, const tbuf *text, const tbuf *msgs, uint6
                      size_t bn, int clean)
 {
     char path[512], line[256];
-    size_t glen, mlen;
+    size_t glen = 0, mlen = 0;
     char *gold, *gmsg;
     FILE *f;
     int ok = 1;
@@ -349,7 +349,7 @@ static void test_noise(void)
         {"navtex_noise", FNAVTEX_MODE_NAVTEX, 77}, {"sitorb_noise", FNAVTEX_MODE_SITORB, 78}};
     int c;
     for (c = 0; c < 2; c++) {
-        size_t xn, bn, glen;
+        size_t xn = 0, bn = 0, glen = 0;
         uint64_t bh;
         double *x = noise_only(FNAVTEX_RATE, 20, cases[c].seed, &xn);
         fnavtex_rx *rx = make_rx(cases[c].mode, 1000, 0, 0);
