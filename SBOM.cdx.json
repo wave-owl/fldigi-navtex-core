@@ -1,0 +1,389 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "bom-ref": "7561d461b00ff11d",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "d40b99d03f813313247b9fe3bec7f0a20fcd4b5e"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "2d51b3e17f772949c4d277ffdda966f82e4e02a29efaaf531f93fd06fe8169ae"
+        }
+      ],
+      "name": "/Users/gerolfziegenhain/src/wave-owl/local/sbom-core-preflight-v2/fldigi-navtex-core/.source-input/.github/workflows/ci.yml",
+      "type": "file"
+    },
+    {
+      "bom-ref": "9c8a102daa0da910",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "bf8cc6a6368c6fb5a48d180f81588dd8b79a1774"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "0a5a07a517c90bf8316c97c55c5662c8cb2175ea3f8d1a63b9c424a69a4b6d3b"
+        }
+      ],
+      "name": "/Users/gerolfziegenhain/src/wave-owl/local/sbom-core-preflight-v2/fldigi-navtex-core/.source-input/dsp/.github/workflows/ci.yml",
+      "type": "file"
+    },
+    {
+      "bom-ref": "git:https://github.com/wave-owl/fldigi-dsp-core@f6f9af1af811243b89abc53132de27d5e2620850",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/wave-owl/fldigi-dsp-core/tree/f6f9af1af811243b89abc53132de27d5e2620850"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "License evidence; see declared files"
+          }
+        }
+      ],
+      "name": "wave-owl/fldigi-dsp-core",
+      "properties": [
+        {
+          "name": "sbom:role",
+          "value": "gitlink"
+        },
+        {
+          "name": "sbom:git-commit",
+          "value": "f6f9af1af811243b89abc53132de27d5e2620850"
+        },
+        {
+          "name": "sbom:git-tree",
+          "value": "ff909bf19ab3dce19159812bb7b949254b0a8ddd"
+        },
+        {
+          "name": "sbom:source-repository",
+          "value": "https://github.com/wave-owl/fldigi-dsp-core"
+        },
+        {
+          "name": "sbom:license-evidence",
+          "value": "[{\"path\": \"LICENSE\", \"sha256\": \"3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986\"}]"
+        },
+        {
+          "name": "sbom:license-resolution",
+          "value": "unresolved; manual review required"
+        }
+      ],
+      "type": "library",
+      "version": "f6f9af1af811243b89abc53132de27d5e2620850"
+    },
+    {
+      "bom-ref": "pkg:github/actions/checkout@v4?package-id=33a8b75b56e25f47",
+      "cpe": "cpe:2.3:a:actions\\/checkout:actions\\/checkout:v4:*:*:*:*:*:*:*",
+      "name": "actions/checkout",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "github-actions-usage-cataloger"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "github-action"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "github-actions-use-statement"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/dsp/.github/workflows/ci.yml"
+        }
+      ],
+      "purl": "pkg:github/actions/checkout@v4",
+      "type": "library",
+      "version": "v4"
+    },
+    {
+      "bom-ref": "pkg:github/actions/checkout@v4?package-id=fa2e67b8c20f75f3",
+      "cpe": "cpe:2.3:a:actions\\/checkout:actions\\/checkout:v4:*:*:*:*:*:*:*",
+      "name": "actions/checkout",
+      "properties": [
+        {
+          "name": "syft:package:foundBy",
+          "value": "github-actions-usage-cataloger"
+        },
+        {
+          "name": "syft:package:type",
+          "value": "github-action"
+        },
+        {
+          "name": "syft:package:metadataType",
+          "value": "github-actions-use-statement"
+        },
+        {
+          "name": "syft:location:0:path",
+          "value": "/.github/workflows/ci.yml"
+        }
+      ],
+      "purl": "pkg:github/actions/checkout@v4",
+      "type": "library",
+      "version": "v4"
+    },
+    {
+      "bom-ref": "vendored:src/navtex_ccir.c",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/wave-owl/fldigi/tree/e7c3ab3709ad62a7d91829364eb48a05fa325c0d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "License evidence; see declared files"
+          }
+        }
+      ],
+      "name": "src/navtex_ccir.c",
+      "properties": [
+        {
+          "name": "sbom:license-evidence",
+          "value": "[{\"path\": \"LICENSE\", \"sha256\": \"3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986\"}]"
+        },
+        {
+          "name": "sbom:license-resolution",
+          "value": "unresolved; manual review required"
+        },
+        {
+          "name": "sbom:role",
+          "value": "declared-vendored-source"
+        },
+        {
+          "name": "sbom:source-manifest",
+          "value": "[{\"path\": \"LICENSE\", \"sha256\": \"3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986\"}, {\"path\": \"README.md\", \"sha256\": \"e9a4a487c76d558a0a0d9d2d367e547544bf526bf82a86e78ee5eee043d53444\"}, {\"path\": \"src/navtex_ccir.c\", \"sha256\": \"da474b57a42a732c30a3c7e0986170e6805382f16162db6a912b46a15daa5efb\"}]"
+        },
+        {
+          "name": "sbom:provenance-verification",
+          "value": "declared origin; local blob hashes do not establish upstream equivalence"
+        }
+      ],
+      "type": "library",
+      "version": "e7c3ab3709ad62a7d91829364eb48a05fa325c0d"
+    },
+    {
+      "bom-ref": "vendored:src/navtex_rx.c",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/wave-owl/fldigi/tree/e7c3ab3709ad62a7d91829364eb48a05fa325c0d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "License evidence; see declared files"
+          }
+        }
+      ],
+      "name": "src/navtex_rx.c",
+      "properties": [
+        {
+          "name": "sbom:license-evidence",
+          "value": "[{\"path\": \"LICENSE\", \"sha256\": \"3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986\"}]"
+        },
+        {
+          "name": "sbom:license-resolution",
+          "value": "unresolved; manual review required"
+        },
+        {
+          "name": "sbom:role",
+          "value": "declared-vendored-source"
+        },
+        {
+          "name": "sbom:source-manifest",
+          "value": "[{\"path\": \"LICENSE\", \"sha256\": \"3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986\"}, {\"path\": \"README.md\", \"sha256\": \"e9a4a487c76d558a0a0d9d2d367e547544bf526bf82a86e78ee5eee043d53444\"}, {\"path\": \"src/navtex_rx.c\", \"sha256\": \"c4e5573148a702d827a95077d307552dc86c0bbd445cb1273406e89a2eb1ad94\"}]"
+        },
+        {
+          "name": "sbom:provenance-verification",
+          "value": "declared origin; local blob hashes do not establish upstream equivalence"
+        }
+      ],
+      "type": "library",
+      "version": "e7c3ab3709ad62a7d91829364eb48a05fa325c0d"
+    },
+    {
+      "bom-ref": "vendored:src/navtex_tx.c",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/wave-owl/fldigi/tree/e7c3ab3709ad62a7d91829364eb48a05fa325c0d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "License evidence; see declared files"
+          }
+        }
+      ],
+      "name": "src/navtex_tx.c",
+      "properties": [
+        {
+          "name": "sbom:license-evidence",
+          "value": "[{\"path\": \"LICENSE\", \"sha256\": \"3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986\"}]"
+        },
+        {
+          "name": "sbom:license-resolution",
+          "value": "unresolved; manual review required"
+        },
+        {
+          "name": "sbom:role",
+          "value": "declared-vendored-source"
+        },
+        {
+          "name": "sbom:source-manifest",
+          "value": "[{\"path\": \"LICENSE\", \"sha256\": \"3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986\"}, {\"path\": \"README.md\", \"sha256\": \"e9a4a487c76d558a0a0d9d2d367e547544bf526bf82a86e78ee5eee043d53444\"}, {\"path\": \"src/navtex_tx.c\", \"sha256\": \"4f7b9249812995e3ba036bc95c924e5c96e9603820977627f1883fbcba4b738c\"}]"
+        },
+        {
+          "name": "sbom:provenance-verification",
+          "value": "declared origin; local blob hashes do not establish upstream equivalence"
+        }
+      ],
+      "type": "library",
+      "version": "e7c3ab3709ad62a7d91829364eb48a05fa325c0d"
+    }
+  ],
+  "compositions": [
+    {
+      "aggregate": "unknown",
+      "assemblies": [
+        "git:https://github.com/wave-owl/fldigi-navtex-core@739d6f6cb4cd23798915ba51684efa426927361a"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "dependsOn": [],
+      "ref": "7561d461b00ff11d"
+    },
+    {
+      "dependsOn": [],
+      "ref": "9c8a102daa0da910"
+    },
+    {
+      "dependsOn": [],
+      "ref": "git:https://github.com/wave-owl/fldigi-dsp-core@f6f9af1af811243b89abc53132de27d5e2620850"
+    },
+    {
+      "dependsOn": [
+        "7561d461b00ff11d",
+        "9c8a102daa0da910",
+        "git:https://github.com/wave-owl/fldigi-dsp-core@f6f9af1af811243b89abc53132de27d5e2620850",
+        "pkg:github/actions/checkout@v4?package-id=33a8b75b56e25f47",
+        "pkg:github/actions/checkout@v4?package-id=fa2e67b8c20f75f3",
+        "vendored:src/navtex_ccir.c",
+        "vendored:src/navtex_rx.c",
+        "vendored:src/navtex_tx.c"
+      ],
+      "ref": "git:https://github.com/wave-owl/fldigi-navtex-core@739d6f6cb4cd23798915ba51684efa426927361a"
+    },
+    {
+      "dependsOn": [],
+      "ref": "pkg:github/actions/checkout@v4?package-id=33a8b75b56e25f47"
+    },
+    {
+      "dependsOn": [],
+      "ref": "pkg:github/actions/checkout@v4?package-id=fa2e67b8c20f75f3"
+    },
+    {
+      "dependsOn": [],
+      "ref": "vendored:src/navtex_ccir.c"
+    },
+    {
+      "dependsOn": [],
+      "ref": "vendored:src/navtex_rx.c"
+    },
+    {
+      "dependsOn": [],
+      "ref": "vendored:src/navtex_tx.c"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "bom-ref": "git:https://github.com/wave-owl/fldigi-navtex-core@739d6f6cb4cd23798915ba51684efa426927361a",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/wave-owl/fldigi-navtex-core/tree/739d6f6cb4cd23798915ba51684efa426927361a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "License evidence; see declared files"
+          }
+        }
+      ],
+      "name": "wave-owl/fldigi-navtex-core",
+      "properties": [
+        {
+          "name": "sbom:role",
+          "value": "source-root"
+        },
+        {
+          "name": "sbom:git-commit",
+          "value": "739d6f6cb4cd23798915ba51684efa426927361a"
+        },
+        {
+          "name": "sbom:git-tree",
+          "value": "6e151efd5521b3dde67202e3c726efb938618b1a"
+        },
+        {
+          "name": "sbom:source-repository",
+          "value": "https://github.com/wave-owl/fldigi-navtex-core"
+        },
+        {
+          "name": "sbom:release-tags",
+          "value": "[\"v0.1.1\"]"
+        },
+        {
+          "name": "sbom:license-evidence",
+          "value": "[{\"path\": \"LICENSE\", \"sha256\": \"3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986\"}]"
+        },
+        {
+          "name": "sbom:license-resolution",
+          "value": "unresolved; manual review required"
+        }
+      ],
+      "type": "application",
+      "version": "739d6f6cb4cd23798915ba51684efa426927361a"
+    },
+    "properties": [
+      {
+        "name": "sbom:scope",
+        "value": "Source repository inventory only; completeness is UNKNOWN. Syft inventories tracked source/package manifests. Gitlinks and declared vendored/model evidence are inspected at immutable pins. CMake declarations are conditional requirements, not resolved installations. This is NOT proof of operating-system packages, static-link closure, build-time resolution, or the contents of release binaries."
+      },
+      {
+        "name": "sbom:generation-status",
+        "value": "success"
+      },
+      {
+        "name": "sbom:generation-errors",
+        "value": "[]"
+      }
+    ],
+    "timestamp": "2026-11-02T16:50:39.762368+00:00",
+    "tools": {
+      "components": [
+        {
+          "author": "anchore",
+          "name": "syft",
+          "type": "application",
+          "version": "1.55.0"
+        }
+      ]
+    }
+  },
+  "serialNumber": "urn:uuid:175ee2a8-57a7-4831-9229-99074bcfde52",
+  "specVersion": "1.6",
+  "version": 1
+}
